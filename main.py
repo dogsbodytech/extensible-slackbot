@@ -1,6 +1,6 @@
 import time
 from libs import *
-from command_quotes import *
+from plugins.quote import *
 
 
 READ_WEBSOCKET_DELAY = 2 
