@@ -9,9 +9,9 @@ git clone https://github.com/dogsbodytech/extensible-slackbot.git slackbot
 virtualenv -p python3 slackbot/venv3
 source slackbot/venv3/bin/activate
 pip3 install -r requirements.txt
-cp slackbot/config.txt.example slackbot/config.txt
+cp slackbot/config.txt.template slackbot/config.txt
 ```
-Edit `slackbot/config.txt` to include your bot name and application
+Edit `slackbot/config.txt` to include your bot name and api key
 
 ## Usage ##
 
@@ -32,17 +32,3 @@ Creating a plugin
 ## Sources ##
 
 
-=======
-# extensible-slackbot
-
-
-# Install Guide
-```
- git clone git@github.com:dogsbodytech/extensible-slackbot.git
- cp config.txt.template config.txt
- vim config.txt
-  Set bot name and api key
- venv -p python3 venv3
- . venv3/bin/activate
- pip install -r requirements.txt
-```
