@@ -2,7 +2,9 @@ from slackclient import SlackClient
 import configparser
 
 config = configparser.ConfigParser()
-config.readfp(open(r'config.txt'))
+with open(r'config.txt') as f:
+    config.readfp(f)
+
 BOT_NAME = config.get('Bot', 'BOT_NAME')
 API_TOKEN = config.get('Bot', 'API_TOKEN')
 
@@ -38,4 +40,3 @@ def bot_id_from_name(botname):
 
 if __name__ == "__main__":
     print("Don't call this script directly, this is the be imported.")
-
