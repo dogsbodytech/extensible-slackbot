@@ -7,8 +7,13 @@ def msg_contains_react_tea(message):
         brewer, count = re.match(r'(\w*) made (\w*) tea.*', message).group(1,2)
         post_tea_data(brewer, count)
         return 'realtea'
-    except Exception as e:
-        print(e)
+    except Exception as e1:
+        try:
+            print(traceback.format_exc(e1))
+        except Exception as e2:
+            # Python traceback bug, this will do
+            print(traceback.format_exc(e2))
+            print(e)
         return 'fire'
 
 def post_tea_data(brewer, count):
