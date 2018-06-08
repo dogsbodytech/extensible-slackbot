@@ -26,9 +26,11 @@ def post_tea_data(brewer, count):
     influx_tea_db = config.get('Tea', 'DB')
     influx_tea_user = config.get('Tea', 'USER')
 
-    requests.post('https://{}:8086/write'.format(influx_tea_url),
-        data = {    'u': influx_tea_user,
+    r = requests.post('https://{}:8086/write'.format(influx_tea_url),
+        params = {  'u': influx_tea_user,
                     'p': influx_tea_pass,
-                    'db': influx_tea_db,
-                    'brewer': brewer.capitalize(),
-                    'count': count})
+                    'db': influx_tea_db,},
+        data = 'tea,brewer={} count={}'.format(brewer.capitalize(), count))
+    r.raise_for_status()
+    assert r.status == 204, 'Write was unsuccessful'
+    assert r.text == '', 'Write was unsuccessful'
