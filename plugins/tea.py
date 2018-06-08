@@ -8,7 +8,7 @@ def msg_contains_react_tea(message):
         post_tea_data(brewer, count)
         return 'realtea'
     except Exception as e:
-        print(traceback.format_exc(e))
+        print(e)
         return 'fire'
 
 def post_tea_data(brewer, count):
