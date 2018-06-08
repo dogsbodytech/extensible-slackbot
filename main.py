@@ -10,7 +10,7 @@ pp = pprint.PrettyPrinter(indent=4)
 modules = {}
 for module in ENABLED_MODULES:
     modules[module] = {}
-    modules[module]['module'] = importlib.import_module('plugins.{}'.format(module)))
+    modules[module]['module'] = importlib.import_module('plugins.{}'.format(module))
     modules[module]['functions'] = {}
     modules[module]['functions']['at_bot_reply'] = []
     modules[module]['functions']['msg_contains_reply'] = []
