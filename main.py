@@ -37,7 +37,7 @@ def handle_message(message, channel, user, timestamp):
     if "<@" + BOT_ID + ">" in message: # We have been @ messaged in a channel
         message = message.replace("<@" + BOT_ID + ">",'').strip().lower()
         for module in modules:
-            for function in module['functions']['at_bot_reply']:
+            for function in modules[module]['functions']['at_bot_reply']:
                 to_post = function(message)
                 if to_post:
                     post_message(channel, to_post)
@@ -46,13 +46,13 @@ def handle_message(message, channel, user, timestamp):
         post_message(channel, "I'm sorry Dave, I'm afraid I can't do that.")
 
     for module in modules:
-        for function in module['functions']['msg_contains_reply']:
+        for function in modules[module]['functions']['msg_contains_reply']:
             if function.__name__.replace('msg_contains_reply', '') in message:
                 to_post = function(message)
                 if to_post:
                     post_message(channel, to_post)
 
-        for function in module['functions']['msg_contains_react']:
+        for function in modules[module]['functions']['msg_contains_react']:
             if function.__name__.replace('msg_contains_react', '') in message:
                 to_react = function(message)
                 if to_react:
