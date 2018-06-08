@@ -47,13 +47,13 @@ def handle_message(message, channel, user, timestamp):
 
     for module in modules:
         for function in modules[module]['functions']['msg_contains_reply']:
-            if function.__name__.replace('msg_contains_reply', '') in message:
+            if function.__name__.replace('msg_contains_reply', '').replace('_', '') in message.replace('_', '').replace(' ', ''):
                 to_post = function(message)
                 if to_post:
                     post_message(channel, to_post)
 
         for function in modules[module]['functions']['msg_contains_react']:
-            if function.__name__.replace('msg_contains_react', '') in message:
+            if function.__name__.replace('msg_contains_react', '').replace('_', '') in message.replace('_', '').replace(' ', ''):
                 to_react = function(message)
                 if to_react:
                     add_reaction(channel, timestamp, to_react)
