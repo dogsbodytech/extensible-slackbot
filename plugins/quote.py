@@ -2,6 +2,8 @@
 import requests
 
 def at_bot_reply_get_random_quote(message):
+    if not 'quote' in message:
+        return
     if not message.startswith('quote'):
         return "I'm sorry Dave, I'm afraid I can't do that."
 
