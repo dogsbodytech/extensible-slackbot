@@ -22,7 +22,7 @@ for module in ENABLED_MODULES:
                 modules[module]['functions'][function_type].append(getattr(modules[module]['module'], object))
 
 print('Loaded the following modules:')
-pp.pprint(modues)
+pp.pprint(modules)
 
 READ_WEBSOCKET_DELAY = 2
 
