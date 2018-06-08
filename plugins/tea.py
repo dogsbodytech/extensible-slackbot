@@ -21,10 +21,10 @@ def post_tea_data(brewer, count):
     with open(r'config.txt') as f:
         config.readfp(f)
 
-    influx_tea_url = config.get('TEA_URL')
-    influx_tea_pass = config.get('TEA_KEY')
-    influx_tea_db = config.get('TEA_DB')
-    influx_tea_user = config.get('TEA_USER')
+    influx_tea_url = config.get('Tea', 'URL')
+    influx_tea_pass = config.get('Tea', 'KEY')
+    influx_tea_db = config.get('Tea', 'DB')
+    influx_tea_user = config.get('Tea', 'USER')
 
     requests.post('https://{}:8086/write'.format(influx_tea_url),
         data = {    'u': influx_tea_user,
