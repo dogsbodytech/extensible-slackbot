@@ -1,6 +1,6 @@
-def msg_contains_react_late(message):
+def msg_contains_react_tea(message):
     try:
-        print(message)    
+        print(message)
         return 'realtea'
     except:
         return 'fire'
