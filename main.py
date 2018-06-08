@@ -2,7 +2,7 @@
 import time
 import importlib
 import pprint
-from libs import post_message, add_reaction, parse_slack_output, bot_id_from_name, ENABLED_MODULES
+from libs import post_message, add_reaction, parse_slack_output, bot_id_from_name, BOT_NAME, ENABLED_MODULES
 
 pp = pprint.PrettyPrinter(indent=4)
 
