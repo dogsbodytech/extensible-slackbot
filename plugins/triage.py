@@ -1,3 +1,4 @@
+import re
 from dateutil import rrule
 from datetime import date, timedelta, datetime
 

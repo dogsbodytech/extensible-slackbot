@@ -8,8 +8,7 @@ with open(r'config.txt') as f:
 
 BOT_NAME = config.get('Bot', 'BOT_NAME')
 API_TOKEN = config.get('Bot', 'API_TOKEN')
-ENABLED_MODULES = ast.literal_eval(config.get('Bot', 'ENABLED_MODULES'))
-assert isinstance(ENABLED_MODULES, list), 'ENABLED_MODULES must be a list'
+PLUGINS = config.get('Bot', 'PLUGINS').split()
 
 slack_client = SlackClient(API_TOKEN)
 
