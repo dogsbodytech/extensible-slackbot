@@ -1,6 +1,7 @@
 import re
 import traceback
 import requests
+import configparser
 
 def msg_contains_react_tea(message):
     try:
