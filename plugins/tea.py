@@ -29,5 +29,5 @@ def post_tea_data(brewer, count):
         data = {    'u': influx_tea_user,
                     'p': influx_tea_pass,
                     'db': influx_tea_db,
-                    'brewer': brewer,
+                    'brewer': brewer.capitapize(),
                     'count': count})
