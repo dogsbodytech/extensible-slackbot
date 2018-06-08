@@ -2,13 +2,13 @@
 import time
 import importlib
 import pprint
-from libs import post_message, add_reaction, parse_slack_output, bot_id_from_name, slack_client, BOT_NAME, ENABLED_MODULES
+from libs import post_message, add_reaction, parse_slack_output, bot_id_from_name, slack_client, BOT_NAME, PLUGINS
 
 pp = pprint.PrettyPrinter(indent=4)
 
-# Import all enabled modules and store them in a big overly complex dict
+# Import all plugins and store them in a big overly complex dict
 modules = {}
-for module in ENABLED_MODULES:
+for module in PLUGINS:
     modules[module] = {}
     modules[module]['module'] = importlib.import_module('plugins.{}'.format(module))
     modules[module]['functions'] = {}
