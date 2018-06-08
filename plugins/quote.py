@@ -1,7 +1,7 @@
 
 import requests
 
-def at_me_and_message_starts_with_get_random_quote(message):
+def at_bot_reply_get_random_quote(message):
     if not message.startswith('quote'):
         return "I'm sorry Dave, I'm afraid I can't do that."
 

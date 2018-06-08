@@ -7,6 +7,7 @@ with open(r'config.txt') as f:
 
 BOT_NAME = config.get('Bot', 'BOT_NAME')
 API_TOKEN = config.get('Bot', 'API_TOKEN')
+ENABLED_MODULES = config.get('Bot', 'API_TOKEN')
 
 slack_client = SlackClient(API_TOKEN)
 

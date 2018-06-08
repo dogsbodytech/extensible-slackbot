@@ -1,3 +1,2 @@
-def message_react_lunch(message):
-    if 'lunch' in message:
-        return 'pizza'
+def msg_contains_react_lunch(message):
+    return 'pizza'
