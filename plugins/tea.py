@@ -12,7 +12,7 @@ def msg_contains_react_tea(message):
             print(traceback.format_exc(e1))
         except Exception as e2:
             # Python traceback bug, this will do
-            print(e2)
+            print(e1)
         return 'fire'
 
 def post_tea_data(brewer, count):
