@@ -39,5 +39,5 @@ def post_tea_data(brewer, count):
                     'db': influx_tea_db,},
         data = 'tea,brewer={} count={}'.format(brewer.capitalize(), count))
     r.raise_for_status()
-    assert r.status == 204, 'Write was unsuccessful'
+    assert r.status_code == 204, 'Write was unsuccessful'
     assert r.text == '', 'Write was unsuccessful'
