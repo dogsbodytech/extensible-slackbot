@@ -1,6 +1,5 @@
 from slackclient import SlackClient
 import configparser
-import ast
 
 config = configparser.ConfigParser()
 with open(r'config.txt') as f:
