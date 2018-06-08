@@ -3,20 +3,27 @@ import traceback
 import requests
 import configparser
 
-def msg_contains_react_tea(message):
+def at_bot_reply_tea(message):
+    if 'made' not in message or 'tea' not in message:
+        # If people aren't making tea we don't want to know about it
+        return
+
     try:
         brewer, count = re.match(r'(\w*) made (\w*) tea.*', message).group(1,2)
         post_tea_data(brewer, count)
-        return 'realtea'
+        return ':realtea:'
     except Exception as e1:
         try:
             print(traceback.format_exc(e1))
         except Exception as e2:
             # Python traceback bug, this will do
             print(e1)
-        return 'fire'
+
+        return "Sorry I didn't quite catch that, try using this format:\n"\
+            "$name made $number tea(s)"
 
 def post_tea_data(brewer, count):
+    count = int(count)
     config = configparser.ConfigParser()
     with open(r'config.txt') as f:
         config.readfp(f)
