@@ -3,6 +3,10 @@ import random
 import os
 
 def msg_contains_react_lunch(message):
+    reaction = 'pizza'
+    return reaction
+
+def msg_contains_reply_ocr_lunch(message):
     # Default reaction
     reaction = 'pizza'
     # Use the reactions file if it exists and contains data in the expected
